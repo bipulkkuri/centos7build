@@ -1,6 +1,7 @@
 # centos7build
 
 To test
+will be adding GH workflow
 ```javascript
 docker build -t centos7build .
 docker image ls
