@@ -3,7 +3,8 @@ LABEL maintainer="BIPUL KUMAR KURI"
 ENV container=docker
 
 RUN yum --setopt=group_package_types=mandatory,default,optional group install "Development Tools" -y
-RUN yum update -y; yum install -y wget; yum install -y curl ;yum install git -y;yum install java-11-openjdk-devel -y;yum install -y python3;yum install -y maven;yum install epel-release -y;yum install -y ansible
+RUN yum update -y;yum install centos-release-scl -y; yum install rh-python36 -y;scl enable rh-python36 bash;
+RUN yum install -y wget; yum install -y curl ;yum install git -y;yum install java-11-openjdk-devel -y;yum install -y maven;yum install epel-release -y;yum install -y ansible
 RUN wget https://downloads.lightbend.com/scala/2.13.4/scala-2.13.4.rpm
 RUN rpm -ivh scala-2.13.4.rpm
 
