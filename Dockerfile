@@ -16,6 +16,10 @@ RUN rm -rf scala-2.13.4.rpm awscli-bundle.zip
 
 RUN  wget https://github.com/cli/cli/releases/download/v1.4.0/gh_1.4.0_linux_386.rpm;rpm -ivh gh_1.4.0_linux_386.rpm
 
+RUN rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+COPY logstash.repo /etc/yum.repos.d/logstash.repo
+RUN yum install logstash -y
+
 RUN yum clean all
 CMD ["bash"]
 
